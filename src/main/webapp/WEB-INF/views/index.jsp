@@ -34,9 +34,10 @@
 					<div class="account pull-right">
 						<ul class="user-menu">				
 							<li><a href="${pageContext.request.contextPath}/show/all/products">View Products</a></li>
-							<li><a href="home/product/cart">Your Cart</a></li>
-							<li><a href="home/checkout">Checkout</a></li>					
-							<li><a href="home/register">Login</a></li>		
+							<li><a href="#">Your Cart</a></li>
+							<li><a href="${pageContext.request.contextPath}/management/products">Add product</a></li>
+							<li><a href="#">Checkout</a></li>					
+							<li><a href="#">Login</a></li>		
 						</ul>
 					</div>
 				</div>
@@ -251,6 +252,13 @@
 								</div>
 							</div>						
 						</div>
+						
+						
+						
+							<!-- IMPORTANT PART OF JSP PAGE! DO NOT TOUCH IT --> <!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+					
+					
+					
 						<div class="row feature_box">						
 							<div class="span4">
 								<div class="service">

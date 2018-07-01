@@ -66,7 +66,7 @@
 						<ul class="nav">
 							<li><a href="./index.html">Homepage</a></li>  
 							<li><a href="./about.html">About Us</a></li>
-							<li><a href="./contact.html">Contac Us</a></li>
+							<li><a href="./contact.html">Contact Us</a></li>
 							<li><a href="./cart.html">Your Cart</a></li>
 							<li><a href="./register.html">Login</a></li>							
 						</ul>					
@@ -99,4 +99,4 @@
 		</div>
 		<script src="<c:url value="/resources/themes/js/common.js" />"></script>
     </body>
-</html>l>
+</html>

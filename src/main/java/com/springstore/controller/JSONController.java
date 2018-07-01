@@ -15,29 +15,24 @@ import com.springstore.dto.Product;
 @RestController
 @RequestMapping("/json")
 public class JSONController {
-     
+
 	@Autowired
 	private ProductDAO productDAO;
-	
-	
+
 	@RequestMapping("/all")
 	@ResponseBody
 	public List<Product> getAllProducts() {
-	  
+
 		return productDAO.activeProducts();
-		
+
 	}
-	
+
 	@RequestMapping("/category/{id}/products")
 	@ResponseBody
 	public List<Product> getAllProductsByCategory(@PathVariable int id) {
-	  
+
 		return productDAO.activeProductsCategory(id);
-		
+
 	}
-	
-	
-	
-	
-	
+
 }

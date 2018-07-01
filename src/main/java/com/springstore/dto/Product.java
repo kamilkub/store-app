@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
+import org.hibernate.validator.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -21,19 +23,25 @@ public class Product {
 	@JsonIgnore
 	private String code;
 	
+	@NotBlank(message = "Enter product name")
 	@Column(name = "name")
 	private String name;
 	
 	@Column(name = "brand")
+	@NotBlank(message = "Enter brand name")
 	private String brand;
 	
 	@Column(name = "description")
 	@JsonIgnore
+	@NotBlank(message = "Fill the description")
 	private String description;
 	
+
+	@Min(value=1, message="Must be more than 1")
 	@Column(name = "unit_price")
 	private double unitPrice;
 	
+	@Min(value=1, message="Must be more than 1")
 	@Column(name = "quantity")
 	private int quantity;
 	
@@ -41,13 +49,15 @@ public class Product {
 	@JsonIgnore
 	private boolean active;
 	
+	
 	@Column(name = "category_id")
 	@JsonIgnore
+	@NotBlank(message = "Set category")
 	private int categoryId;
 	
 	@Column(name = "supplier_id")
 	@JsonIgnore
-	private int supplierdId;
+	private int supplierId;
 	
 	@Column(name = "purchases")
 	private int purchases;
@@ -114,11 +124,11 @@ public class Product {
 	public void setCategoryId(int categoryId) {
 		this.categoryId = categoryId;
 	}
-	public int getSupplierdId() {
-		return supplierdId;
+	public int getSupplierId() {
+		return supplierId;
 	}
-	public void setSupplierdId(int supplierdId) {
-		this.supplierdId = supplierdId;
+	public void setSupplierId(int supplierId) {
+		this.supplierId = supplierId;
 	}
 	public int getPurchases() {
 		return purchases;
@@ -137,7 +147,7 @@ public class Product {
 	public String toString() {
 		return "Product [id=" + id + ", code=" + code + ", name=" + name + ", brand=" + brand + ", description="
 				+ description + ", unitPrice=" + unitPrice + ", quantity=" + quantity + ", active=" + active
-				+ ", categoryId=" + categoryId + ", supplierdId=" + supplierdId + ", purchases=" + purchases
+				+ ", categoryId=" + categoryId + ", supplierId=" + supplierId + ", purchases=" + purchases
 				+ ", views=" + views + "]";
 	}
 	

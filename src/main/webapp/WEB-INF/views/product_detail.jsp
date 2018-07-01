@@ -77,8 +77,8 @@
 								<address>
 								    <strong>Name:</strong> <span>${product.name}</span><br>
 									<strong>Brand:</strong> <span>${product.brand}</span><br>
-									<strong>Product Category:</strong> <span>${category.name}</span><br>
-									<strong>Available:</strong> <span>${product.quantity}</span><br>	
+									<strong>Product Category:</strong> <span>${category.name}</span><br>				
+									<strong>Available:</strong> <span>${product.quantity}</span><br>					
 									<strong>Views:</strong> <span>${product.views}</span><br>									
 								</address>									
 								<h4><strong>Price: ${product.unitPrice} PLN</strong></h4>
@@ -88,7 +88,14 @@
 									<p>&nbsp;</p>
 									<label>Number:</label>
 									<input type="text" class="span1" placeholder="1">
-									<button class="btn btn-inverse" type="submit">Add to cart</button>
+									<c:choose>
+									<c:when test="${product.quantity == 0}">
+									<button class="btn btn-inverse" type="submit" disabled>Add to cart</button>
+									</c:when>
+									 <c:otherwise>
+									     <button class="btn btn-inverse" type="submit">Add to cart</button>
+									 </c:otherwise>
+									</c:choose>
 								</form>
 							</div>							
 						</div>
