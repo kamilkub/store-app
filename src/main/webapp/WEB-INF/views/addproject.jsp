@@ -1,5 +1,6 @@
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -33,6 +34,12 @@
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 			<script src="js/respond.min.js"></script>
 		<![endif]-->
+		
+	<style>
+	   .error{
+	          color:red;
+	   }
+	</style>
 </head>
 <body>
 	<div id="top-bar" class="container">
@@ -41,12 +48,11 @@
 			<div class="span8">
 				<div class="account pull-right">
 					<ul class="user-menu">
-						<li><a
-							href="${pageContext.request.contextPath}/show/all/products">View
-								Products</a></li>
-						<li><a href="cart.html">Your Cart</a></li>
-						<li><a href="checkout.html">Checkout</a></li>
-						<li><a href="register.html">Login</a></li>
+						    <li><a href="${pageContext.request.contextPath}/show/all/products">View Products</a></li>
+							<li><a href="cart.html">Your Cart</a></li>
+							<li><a href="${pageContext.request.contextPath}/management/products">Add product</a></li>
+							<li><a href="${pageContext.request.contextPath}/registration">Check Out</a></li>				
+							<li><a href="${pageContext.request.contextPath}/login">Login</a></li>		
 					</ul>
 				</div>
 			</div>
@@ -76,53 +82,66 @@
         <h2 style="color:red;">${error}</h2>
         
         <h3>Add Product</h3>
-		<sf:form modelAttribute="product" action="${pageContext.request.contextPath}/management/products" method="POST">
+		<sf:form modelAttribute="product" action="${pageContext.request.contextPath}/management/products" method="POST" enctype="multipart/form-data">
 		
 		  <!-- Name -->
 		      
 			<label class="control-label">Product Name</label>
 			<div class="controls">
-			      <sf:errors path="name" element="em" />
+
 				<sf:input type="text" placeholder="Enter product name"
 					id="name" class="input-xlarge" path="name" name="name" />
+					<form:errors path="name" cssClass="error" />
 			</div>
 			   
 			  <!-- Brand -->
 				<label class="control-label">Brand Name</label>
 			<div class="controls">
-			    <sf:errors path="brand" element="em" />
+			      
 				<sf:input type="text" name="brand" path="brand" placeholder="Enter brand name"
 					id="brand" class="input-xlarge" />
+					 <sf:errors path="brand" cssClass="error" />
 			</div>
 			   <!-- Description -->
 			<label class="control-label">Product Description</label>
 			<div class="controls">
-			       <sf:errors path="description" element="em"  />
+			     	         
 				<sf:textarea placeholder="Describe product.."
 					id="description" class="input-xlarge" path="description" name="description" />
+					<sf:errors path="description" cssClass="error"  />
 			</div>
 			   <!--  Price -->
 			<label class="control-label">Price</label>
 			<div class="controls">
-		           <sf:errors path="unitPrice" element="em"  />
+		             
 				<sf:input type="text" placeholder="Product price"
 					id="unitPrice" class="input-xlarge" path="unitPrice" name="unitPrice" />
+					 <sf:errors path="unitPrice" cssClass="error"  />
 			</div>
 			
 			<!-- Quantity -->
 				<label class="control-label">Quantity</label>
 			<div class="controls">
-		          <sf:errors path="quantity"  element="em" />
-			  
+			
 				<sf:input type="number" placeholder="Quantity"
 					id="quantity" class="input-xlarge" path="quantity" name="quantity" />
+					<sf:errors path="quantity"  cssClass="error" />
 			</div>
 			
+			<!-- Select an image -->
+			
+			 <label class="control-label">Select image: </label>
+			<div class="controls">
+				<sf:input type="file" path="file" id="file" name="file" />
+				<sf:errors path="file" cssClass="error"/>
+            </div>
+            <br>
+            
             <!-- Category -->
                <label class="control-label">Category</label>
 			<div class="controls">
-                 <sf:errors path="categoryId"  element="em" />
 				<sf:select path="categoryId" id="categoryId" name="categoryId" items="${categories}" itemLabel="name" itemValue="id" />
+				<sf:errors path="categoryId"  cssClass="error" />
             </div>
             <br>
             <!--  SUBMIT -->
@@ -158,7 +177,7 @@
 					<ul class="nav">
 						<li><a href="./index.html">Homepage</a></li>
 						<li><a href="./about.html">About Us</a></li>
-						<li><a href="./contact.html">Contac Us</a></li>
+						<li><a href="./contact.html">Contact Us</a></li>
 						<li><a href="./cart.html">Your Cart</a></li>
 						<li><a href="./register.html">Login</a></li>
 					</ul>

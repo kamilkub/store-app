@@ -34,8 +34,9 @@ public class StoreController {
 	public ModelAndView showPage() {
 		
 		ModelAndView model_view = new ModelAndView("index");
-		
+			
 		model_view.addObject("categories", categoryDAO.categoriesList());
+		
 		
 		return model_view;
 	}

@@ -7,8 +7,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 import javax.validation.constraints.Min;
-import org.hibernate.validator.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -23,25 +27,28 @@ public class Product {
 	@JsonIgnore
 	private String code;
 	
-	@NotBlank(message = "Enter product name")
+	@NotNull(message="Required!")
+	@Size(min=1, message="Required!")
 	@Column(name = "name")
 	private String name;
 	
+	@NotNull(message="Required!")
+	@Size(min=1, message="Required!")
 	@Column(name = "brand")
-	@NotBlank(message = "Enter brand name")
 	private String brand;
 	
+	@NotNull(message="Required!")
+	@Size(min=10, message="Required!")
 	@Column(name = "description")
 	@JsonIgnore
-	@NotBlank(message = "Fill the description")
 	private String description;
 	
 
-	@Min(value=1, message="Must be more than 1")
+	@Min(value=1, message="Enter price!")
 	@Column(name = "unit_price")
 	private double unitPrice;
 	
-	@Min(value=1, message="Must be more than 1")
+	@Min(value=1, message="Enter amount of your product!")
 	@Column(name = "quantity")
 	private int quantity;
 	
@@ -52,7 +59,6 @@ public class Product {
 	
 	@Column(name = "category_id")
 	@JsonIgnore
-	@NotBlank(message = "Set category")
 	private int categoryId;
 	
 	@Column(name = "supplier_id")
@@ -64,6 +70,11 @@ public class Product {
 	
 	@Column(name = "views")
 	private int views;
+	
+	@Transient
+	private MultipartFile file;
+	
+	
 	
 	
 	public Product () {
@@ -141,6 +152,14 @@ public class Product {
 	}
 	public void setViews(int views) {
 		this.views = views;
+	}
+
+	public MultipartFile getFile() {
+		return file;
+	}
+
+	public void setFile(MultipartFile file) {
+		this.file = file;
 	}
 
 	@Override

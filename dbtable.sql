@@ -57,5 +57,27 @@ VALUES
 
 
 
+CREATE TABLE address (
+	id IDENTITY,
+	user_id int,
+	address_one VARCHAR(100),
+	address_two VARCHAR(100),
+	city VARCHAR(20),
+	state VARCHAR(20),
+	country VARCHAR(20),
+	postal_code VARCHAR(10),
+	billing BOOLEAN,
+	shipping BOOLEAN,
+	CONSTRAINT fk_address_user_id FOREIGN KEY (user_id ) REFERENCES user_detail (id),
+	CONSTRAINT pk_address_id PRIMARY KEY (id)
+);
 
+CREATE TABLE cart (
+	id IDENTITY,
+	user_id int,
+	total_price DECIMAL(10,2),
+	cart_lines int,
+	CONSTRAINT fk_cart_user_id FOREIGN KEY (user_id ) REFERENCES users (id),
+	CONSTRAINT pk_cart_id PRIMARY KEY (id)
+);
 

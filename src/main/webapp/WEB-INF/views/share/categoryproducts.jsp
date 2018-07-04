@@ -2,8 +2,6 @@
  <c:if test="${userClickCategoryProducts == true}">
  
  
- <c:if test="${pageContext.request.contextPath}/show/category/1/products">
- 
   <div class="row">						
 					<div class="span9">								
 						<ul class="thumbnails listing-products">							
@@ -141,9 +139,7 @@
 					</div>
 				</div>
  
- </c:if>
  
- <c:if test="${pageContext.request.contextPath}/show/category/2/products">
         <div class="row">						
 					<div class="span9">								
 						<ul class="thumbnails listing-products">							
@@ -277,8 +273,7 @@
 				</div>
  
  
- 
- </c:if>
+
  
  
  

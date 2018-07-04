@@ -36,8 +36,9 @@
 						<ul class="user-menu">				
 							<li><a href="${pageContext.request.contextPath}/show/all/products">View Products</a></li>
 							<li><a href="cart.html">Your Cart</a></li>
-							<li><a href="checkout.html">Checkout</a></li>					
-							<li><a href="register.html">Login</a></li>			
+							<li><a href="${pageContext.request.contextPath}/management/products">Add product</a></li>
+							<li><a href="${pageContext.request.contextPath}/registration">Check Out</a></li>				
+							<li><a href="${pageContext.request.contextPath}/login">Login</a></li>					
 						</ul>
 					</div>
 				</div>

@@ -38,8 +38,9 @@
 						<ul class="user-menu">				
 							<li><a href="${pageContext.request.contextPath}/show/all/products">View Products</a></li>
 							<li><a href="cart.html">Your Cart</a></li>
-							<li><a href="checkout.html">Checkout</a></li>					
-							<li><a href="register.html">Login</a></li>		
+							<li><a href="${pageContext.request.contextPath}/management/products">Add product</a></li>
+							<li><a href="${pageContext.request.contextPath}/registration">Check Out</a></li>				
+							<li><a href="${pageContext.request.contextPath}/login">Login</a></li>			
 						</ul>
 					</div>
 				</div>
@@ -69,7 +70,7 @@
 					<div class="span9">
 						<div class="row">
 							<div class="span4">
-								<a href="themes/images/ladies/1.jpg" class="thumbnail" data-fancybox-group="group1" title="Description 1"><img alt="" src="<c:url value="/resources/themes/images/ladies/1.jpg"/>"></a>												
+								<a href="/resources/themes/images/ladies/${product.code}.jpg" class="thumbnail" data-fancybox-group="group1" title="Description 1"><img alt="" src="<c:url value="/resources/themes/images/ladies/${product.code}.jpg" />"></a>												
 								<br>
 								<br>
 							</div>
@@ -138,57 +139,48 @@
 												<li class="span3">
 													<div class="product-box">
 														<span class="sale_tag"></span>												
-														<a href="product_detail.html"><img alt="" src="<c:url value="/resources/themes/images/ladies/6.jpg" />"></a><br/>
-														<a href="product_detail.html" class="title">Wuam ultrices rutrum</a><br/>
-														<a href="#" class="category">Suspendisse aliquet</a>
-														<p class="price">$341</p>
+														<a href="product_detail.html"><img alt="" src="<c:url value="/resources/themes/images/" />"></a><br/>
+														<a href="product_detail.html" class="title">TITLE</a><br/>
+														<a href="#" class="category">CATEGORY</a>
+														<p class="price">PRICE</p>
 													</div>
 												</li>
 												<li class="span3">
 													<div class="product-box">
 														<span class="sale_tag"></span>												
-														<a href="product_detail.html"><img alt="" src="<c:url value="/resources/themes/images/ladies/5.jpg" />"></a><br/>
-														<a href="product_detail.html" class="title">Fusce id molestie massa</a><br/>
-														<a href="#" class="category">Phasellus consequat</a>
-														<p class="price">$341</p>
+														<a href="product_detail.html"><img alt="" src="<c:url value="/resources/themes/images/" />"></a><br/>
+														<a href="product_detail.html" class="title">TITLE</a><br/>
+														<a href="#" class="category">CATEGORY</a>
+														<p class="price">PRICE</p>
 													</div>
 												</li>       
 												<li class="span3">
 													<div class="product-box">												
-														<a href="product_detail.html"><img alt="" src="<c:url value="/resources/themes/images/ladies/4.jpg" />"></a><br/>
-														<a href="product_detail.html" class="title">Praesent tempor sem</a><br/>
-														<a href="#" class="category">Erat gravida</a>
-														<p class="price">$28</p>
+														<a href="product_detail.html"><img alt="" src="<c:url value="/resources/themes/images/ladies/" />"></a><br/>
+														<a href="product_detail.html" class="title"></a><br/>
+														<a href="#" class="category"></a>
+														<p class="price">PRICE</p>
 													</div>
 												</li>												
 											</ul>
 										</div>
 										<div class="item">
-											<ul class="thumbnails listing-products">
-												<li class="span3">
-													<div class="product-box">
-														<span class="sale_tag"></span>												
-														<a href="product_detail.html"><img alt="" src="<c:url value="/resources/themes/images/ladies/1.jpg" />"></a><br/>
-														<a href="product_detail.html" class="title">Fusce id molestie massa</a><br/>
-														<a href="#" class="category">Phasellus consequat</a>
-														<p class="price">$341</p>
-													</div>
-												</li>       
+											<ul class="thumbnails listing-products">      
 												<li class="span3">
 													<div class="product-box">												
-														<a href="product_detail.html"><img alt="" src="<c:url value="/resources/themes/images/ladies/2.jpg" />"></a><br/>
-														<a href="product_detail.html">Praesent tempor sem</a><br/>
-														<a href="#" class="category">Erat gravida</a>
-														<p class="price">$28</p>
+														<a href="product_detail.html"><img alt="" src="<c:url value="/resources/themes/images/ladies/" />"></a><br/>
+														<a href="product_detail.html"></a><br/>
+														<a href="#" class="category"></a>
+														<p class="price">PRICE</p>
 													</div>
 												</li>
 												<li class="span3">
 													<div class="product-box">
 														<span class="sale_tag"></span>												
-														<a href="product_detail.html"><img alt="" src="<c:url value="/resources/themes/images/ladies/3.jpg" />"></a><br/>
-														<a href="product_detail.html" class="title">Wuam ultrices rutrum</a><br/>
-														<a href="#" class="category">Suspendisse aliquet</a>
-														<p class="price">$341</p>
+														<a href="#"><img alt="" src="<c:url value="/resources/themes/images/ladies/" />"></a><br/>
+														<a href="product_detail.html" class="title"></a><br/>
+														<a href="#" class="category"></a>
+														<p class="price">PRICE</p>
 													</div>
 												</li>
 											</ul>
@@ -202,20 +194,20 @@
 						<div class="block">	
 							<ul class="nav nav-list">
 								<li class="nav-header">SUB CATEGORIES</li>
-								<li><a href="products.html">Nullam semper elementum</a></li>
-								<li class="active"><a href="products.html">Phasellus ultricies</a></li>
-								<li><a href="products.html">Donec laoreet dui</a></li>
-								<li><a href="products.html">Nullam semper elementum</a></li>
-								<li><a href="products.html">Phasellus ultricies</a></li>
-								<li><a href="products.html">Donec laoreet dui</a></li>
+								<li><a href="#">Watches</a></li>
+								<li class="active"><a href="#">Dresses</a></li>
+								<li><a href="#">Jackets</a></li>
+								<li><a href="#">Shirts</a></li>
+								<li><a href="#"></a></li>
+								<li><a href="#"></a></li>
 							</ul>
 							<br/>
 							<ul class="nav nav-list below">
 								<li class="nav-header">MANUFACTURES</li>
-								<li><a href="products.html">Adidas</a></li>
-								<li><a href="products.html">Nike</a></li>
-								<li><a href="products.html">Dunlop</a></li>
-								<li><a href="products.html">Yamaha</a></li>
+								<li><a href="#">Calvin&Klein</a></li>
+								<li><a href="#">H&M</a></li>
+								<li><a href="#">Tommy Hilfiger</a></li>
+								<li><a href="#">Glamour</a></li>
 							</ul>
 						</div>
 						<div class="block">
@@ -232,7 +224,7 @@
 											<li class="span3">
 												<div class="product-box">
 													<span class="sale_tag"></span>												
-													<a href="product_detail.html"><img alt="" src="<c:url value="/resources/themes/images/ladies/7.jpg" />"></a><br/>
+													<a href="product_detail.html"><img alt="" src="<c:url value="/resources/themes/images/ladies/0D221F21CB.jpg" />"></a><br/>
 													<a href="product_detail.html" class="title">Fusce id molestie massa</a><br/>
 													<a href="#" class="category">Suspendisse aliquet</a>
 													<p class="price">$261</p>
@@ -244,7 +236,7 @@
 										<ul class="thumbnails listing-products">
 											<li class="span3">
 												<div class="product-box">												
-													<a href="product_detail.html"><img alt="" src="<c:url value="/resources/themes/images/ladies/8.jpg" />"></a><br/>
+													<a href="product_detail.html"><img alt="" src="<c:url value="/resources/themes/images/ladies/3FD051B74B.jpg" />"></a><br/>
 													<a href="product_detail.html" class="title">Tempor sem sodales</a><br/>
 													<a href="#" class="category">Urna nec lectus mollis</a>
 													<p class="price">$134</p>
@@ -262,25 +254,28 @@
 									<a href="#" title="Praesent tempor sem sodales">
 										<img src="<c:url value="/resources/themes/images/ladies/1.jpg" />" alt="Praesent tempor sem sodales">
 									</a>
-									<a href="#">Praesent tempor sem</a>
+									<a href="#">Black Dress</a>
 								</li>
 								<li>
 									<a href="#" title="Luctus quam ultrices rutrum">
 										<img src="<c:url value="/resources/themes/images/ladies/2.jpg" />" alt="Luctus quam ultrices rutrum">
 									</a>
-									<a href="#">Luctus quam ultrices rutrum</a>
+									<a href="#">Floral Dress</a>
 								</li>
 								<li>
 									<a href="#" title="Fusce id molestie massa">
 										<img src="<c:url value="/resources/themes/images/ladies/3.jpg" />" alt="Fusce id molestie massa">
 									</a>
-									<a href="#">Fusce id molestie massa</a>
+									<a href="#">Polo Dress</a>
 								</li>   
 							</ul>
 						</div>
 					</div>
 				</div>
-			</section>			
+			</section>	
+			
+			
+			<!-- DO NOT DELETE THIS -->		
 			<section id="footer-bar">
 				<div class="row">
 					<div class="span3">

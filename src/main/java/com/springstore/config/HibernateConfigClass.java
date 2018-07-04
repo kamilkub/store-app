@@ -28,7 +28,7 @@ public class HibernateConfigClass {
 	private final static String db_password = "";
 	
 	// DataSource provides connection information of database
-	@Bean
+	@Bean("dataSource")
 	public DataSource getDatabaseInformation() {
 		
 		BasicDataSource data = new BasicDataSource();
@@ -64,6 +64,8 @@ public class HibernateConfigClass {
 		prop.put("hibernate.dialect", db_dialect);
 		prop.put("hibernate.show_sql", "true");
 		prop.put("hibernate.format_sql", "true");
+		
+		prop.put("hibernate.hbm2ddl.auto", "update");
 		
 		return prop;
 	}

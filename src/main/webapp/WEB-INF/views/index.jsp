@@ -24,6 +24,7 @@
 				
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 			<script src="<c:url value="js/respond.min.js"/>"></script>
+			
 	</head>
     <body>		
 		<div id="top-bar" class="container">
@@ -34,10 +35,10 @@
 					<div class="account pull-right">
 						<ul class="user-menu">				
 							<li><a href="${pageContext.request.contextPath}/show/all/products">View Products</a></li>
-							<li><a href="#">Your Cart</a></li>
+							<li><a href="cart.html">Your Cart</a></li>
 							<li><a href="${pageContext.request.contextPath}/management/products">Add product</a></li>
-							<li><a href="#">Checkout</a></li>					
-							<li><a href="#">Login</a></li>		
+							<li><a href="${pageContext.request.contextPath}/registration">Check Out</a></li>				
+							<li><a href="${pageContext.request.contextPath}/login">Login</a></li>			
 						</ul>
 					</div>
 				</div>
@@ -91,7 +92,7 @@
 												<li class="span3">
 													<div class="product-box">
 														<span class="sale_tag"></span>
-														<p><a href="${pageContext.request.contextPath}/show/1/product"><img src="<c:url value="/resources/themes/images/ladies/1.jpg" />" alt="" /></a></p>
+														<p><a href="${pageContext.request.contextPath}/show/1/product"><img src="<c:url value="/resources/themes/images/ladies/5BC7CA86EF.jpg" />"  alt="" /></a></p>
 														<a href="${pageContext.request.contextPath}/show/1/product" class="title">Black dress</a><br/>
 														<a href="${pageContext.request.contextPath}/show/1/product" class="category">Woman dress</a>
 														<p class="price">$17.25</p>
@@ -100,25 +101,25 @@
 												<li class="span3">
 													<div class="product-box">
 														<span class="sale_tag"></span>
-														<p><a href="${pageContext.request.contextPath}/show/2/product"><img src="<c:url value="/resources/themes/images/ladies/2.jpg" />" alt="" /></a></p>
+														<p><a href="${pageContext.request.contextPath}/show/2/product"><img src="<c:url value="/resources/themes/images/ladies/0AC7CA86EF.jpg" />" alt="" /></a></p>
 														<a href="${pageContext.request.contextPath}/show/2/product" class="title">Floral Dress</a><br/>
-														<a href="${pageContext.request.contextPath}/show/2/product" class="category">Woman Dress</a>
+														<a href="${pageContext.request.contextPath}/show/2/product" class="category">Woman</a>
 														<p class="price">$32.50</p>
 													</div>
 												</li>
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="${pageContext.request.contextPath}/show/3/product"><img src="<c:url value="/resources/themes/images/ladies/3.jpg" />" alt="" /></a></p>
-														<a href="${pageContext.request.contextPath}/show/3/product" class="title">Know exactly turned</a><br/>
-														<a href="${pageContext.request.contextPath}/show/3/product" class="category">Quis nostrud</a>
+														<p><a href="${pageContext.request.contextPath}/show/3/product"><img src="<c:url value="/resources/themes/images/ladies/3FD051B74B.jpg" />" alt="" /></a></p>
+														<a href="${pageContext.request.contextPath}/show/3/product" class="title">Polo Dress</a><br/>
+														<a href="${pageContext.request.contextPath}/show/3/product" class="category">Woman</a>
 														<p class="price">$14.20</p>
 													</div>
 												</li>
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="${pageContext.request.contextPath}/show/4/product"><img src="<c:url value="/resources/themes/images/ladies/4.jpg" /> " alt="" /></a></p>
-														<a href="${pageContext.request.contextPath}/show/4/product" class="title">You think fast</a><br/>
-														<a href="${pageContext.request.contextPath}/show/4/product" class="category">World once</a>
+														<p><a href="${pageContext.request.contextPath}/show/4/product"><img src="<c:url value="/resources/themes/images/ladies/0D221F21CB.jpg" /> " alt="" /></a></p>
+														<a href="${pageContext.request.contextPath}/show/4/product" class="title">Grey Blouse</a><br/>
+														<a href="${pageContext.request.contextPath}/show/4/product" class="category">Woman</a>
 														<p class="price">$31.45</p>
 													</div>
 												</li>
