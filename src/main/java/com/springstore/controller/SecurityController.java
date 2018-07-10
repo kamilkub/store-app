@@ -34,10 +34,6 @@ public class SecurityController {
 	private Cart cart;
 	
 	private Address address;
-	
-	@Autowired
-	private BCryptPasswordEncoder crypt;
-	
 
 	private static final org.jboss.logging.Logger logger = LoggerFactory.logger(SecurityController.class);
 
@@ -53,12 +49,29 @@ public class SecurityController {
 		return model_view;
 
 	}
+	
+	@RequestMapping("/register")
+	public ModelAndView showUsersRegistration(@Valid @RequestParam(name="operation", required=false) String operation) {
+		
+		ModelAndView model_view = new ModelAndView("register");
+		
+		User user = new User();
+		
+		model_view.addObject("user", user);
+		
+		if(operation!=null) {
+        	if(operation.equals("user")) {
+        		model_view.addObject("success", "You registered successfully! Now you can log in");
+        	}
+        }
+		
+		return model_view;
+	}
+	
 
-	@PostMapping("/adduser")
+	@PostMapping("/register")
 	public String singUpForm(@Valid @ModelAttribute("user") User user, BindingResult result, Model model) {
          
-		new FileValidator().validate(user, result);
-
 		if (result.hasErrors()) {
 			
 			return "register";
@@ -66,13 +79,16 @@ public class SecurityController {
 		} else {
 
 			logger.info(user.toString());
-				
-			cart.setUser(user);
 			
+			cart = new Cart();
+			cart.setUser(user);
 			cart.setId(user.getId());
+			cart.setTotalPrice(0.00);
+			cart.setCartLines(0);
 			
 			userDAO.addNewUser(user);
-
+            userDAO.createCart(cart);
+			
 		}
 
 		return "redirect://register?operation=user";

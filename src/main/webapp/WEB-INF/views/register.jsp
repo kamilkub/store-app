@@ -86,13 +86,15 @@
 							</div>
 							<div class="accordion-group">
 								<div class="accordion-heading">
-									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Account &amp; Billing Details</a>
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Make an Account here! Just Click &amp; Billing Details</a>
 								</div>
-								<form:form modelAttribute="user" method="POST" action="${pageContext.request.contextPath}/adduser" enctype="multipart/form-data">
+								<c:if test="${not empty success}"><h2 style="color:green;">${success}</h2></c:if>
+								<br>
  								<div id="collapseTwo" class="accordion-body collapse">
 									<div class="accordion-inner">
 										<div class="row-fluid">
 											<div class="span6">
+											<form:form modelAttribute="user" method="POST" action="${pageContext.request.contextPath}/register">
 												<h4>Your Personal Details</h4>
 												<div class="control-group">
 													<label class="control-label">First Name</label>
@@ -111,7 +113,7 @@
 												<div class="control-group">
 													<label class="control-label">Email Address</label>
 													<div class="controls">
-														<sf:input type="email" placeholder="" class="input-xlarge" path="email" name="email" id="email"  />
+														<sf:input type="text" placeholder="" class="input-xlarge" path="email" name="email" id="email"  />
 														<form:errors path="email" cssClass="error" />
 													</div>
 												</div>
@@ -134,6 +136,9 @@
 												
 												
 											</div>
+											     <sf:hidden path="id" />
+											     <sf:hidden path="active" />
+											     <sf:hidden path="role" />
 											
 												</form:form>
 											
@@ -213,7 +218,7 @@
 						<ul class="nav">
 							<li><a href="./index.html">Homepage</a></li>  
 							<li><a href="./about.html">About Us</a></li>
-							<li><a href="./contact.html">Contac Us</a></li>
+							<li><a href="./contact.html">Contact Us</a></li>
 							<li><a href="./cart.html">Your Cart</a></li>
 							<li><a href="./register.html">Login</a></li>							
 						</ul>					

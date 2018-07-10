@@ -48,10 +48,12 @@ public class ProductController {
 		
 		Product product = new Product();
 		
+		List<Product> products = productDAO.activeProducts();		
 		product.setSupplierId(1);
         product.setActive(true);
         
         model_view.addObject("product", product);
+        model_view.addObject("products", products);
         
         if(operation!=null) {
         	if(operation.equals("product")) {

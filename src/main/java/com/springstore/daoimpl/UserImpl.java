@@ -23,11 +23,25 @@ public class UserImpl implements UserDAO {
 	private SessionFactory session_factory;
 	
 	@Override
+	public boolean createCart(Cart cart) {
+		
+		try {
+            session_factory.getCurrentSession().persist(cart); 
+			return true;
+		}catch(Exception ex) {
+			ex.printStackTrace();
+			return false;
+		}
+		
+	}
+	
+	
+	@Override
 	public boolean addNewUser(User user) {
 		
 		try {
 			
-			session_factory.getCurrentSession().update(user);
+			session_factory.getCurrentSession().persist(user);
 			return true;
 			
 		}catch(Exception ex) {

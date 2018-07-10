@@ -18,4 +18,5 @@ public interface UserDAO {
 	  
 	  
 	  boolean updateCartResource(Cart cart);
+	  boolean createCart(Cart cart);
 }

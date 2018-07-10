@@ -30,6 +30,8 @@
 <script src="<c:url value="/resources/themes/js/superfish.js" />"></script>
 <script
 	src="<c:url value="/resources/themes/js/jquery.scrolltotop.js" />"></script>
+	<link href="<c:url value="/resources/bootstrap/css/chleb.css" />"
+	rel="stylesheet">
 <!--[if lt IE 9]>			
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 			<script src="js/respond.min.js"></script>
@@ -155,18 +157,42 @@
 		   <sf:hidden path="purchases" />
 		   <sf:hidden path="views" /> 
 		
+	
+		
 		</sf:form>
+       
+       
+       	<div id="manage">
 
 
+		<table>
+			<tbody>
+				<tr>
+					<th>Name</th>
+					<th>Brand</th>
+					<th>Description</th>
+					<th>Price</th>
+					<th>Active</th>
+					<th>Views</th>
+					<th>Purchases</th>
+				</tr>
+				<tr>
+                   <td></td>
+				   <td></td>
+				   <td></td>
+				   <td></td>
+				   <td></td>
+				   <td></td>
+				   <td></td>
+			    </tr>
+			</tbody>
+		</table>
 
 
-
-
-
-
-
-
-
+	</div>
+       
+        
+ <!-- <tr>Brand</tr><tr>Description</tr><tr>Price</tr><tr>Views</tr><tr>Active</tr>-->
 
 
 		<!-- DO NOT TOUCH IT -->

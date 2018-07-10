@@ -4,6 +4,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import com.springstore.dto.Product;
+import com.springstore.dto.User;
 
 public class FileValidator implements Validator{
 

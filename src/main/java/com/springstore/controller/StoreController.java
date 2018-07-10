@@ -122,17 +122,5 @@ public class StoreController {
 		
 	}
 	
-	@RequestMapping("/register")
-	public ModelAndView showUsersRegistration() {
-		
-		ModelAndView model_view = new ModelAndView("register");
-		
-		User user = new User();
-		
-		model_view.addObject("user", user);
-		
-		return model_view;
-	}
-	
 
 }
