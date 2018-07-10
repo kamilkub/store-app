@@ -17,7 +17,7 @@ CREATE TABLE USERS (
       last_name VARCHAR(50),
       role VARCHAR(50),
       enabled BOOLEAN,
-      password VARCHAR(50),
+      password VARCHAR(60),
       email VARCHAR(70),
       contact_number VARCHAR(15),
       CONSTRAINT pk_user_id PRIMARY KEY (id),
@@ -49,7 +49,7 @@ VALUES
 INSERT INTO USERS 
 (first_name, last_name, role, enabled, password, email, contact_number) 
 VALUES
-('Migueal', 'Arranto', 'USER', true, 'user123', 'miguel@gmail.com', '123456723');
+('Migueal', 'Arranto', 'USER', true, '$2a$04$1QJ0CxW2xqlt1D9npHyUnubCzdbAkgdW.bHctQYwTzmFQW.OiyIcK', 'miguel@gmail.com', '123456723');
 INSERT INTO USERS 
 (first_name, last_name, role, enabled, password, email, contact_number) 
 VALUES

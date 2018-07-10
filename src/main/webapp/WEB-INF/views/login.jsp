@@ -35,10 +35,10 @@
 					<div class="account pull-right">
 						<ul class="user-menu">				
 							<li><a href="${pageContext.request.contextPath}/show/all/products">View Products</a></li>
-							<li><a href="cart.html">Your Cart</a></li>
+							<li><a href="${pageContext.request.contextPath}/cart">Your Cart</a></li>
 							<li><a href="${pageContext.request.contextPath}/registration">Check Out</a></li>
 							<li><a href="${pageContext.request.contextPath}/management/products">Add product</a></li>					
-							<li><a href="${pageContext.request.contextPath}/login">Login</a></li>		
+							<li><a href="${pageContext.request.contextPath}/auth">Login</a></li>		
 						</ul>
 					</div>
 				</div>
@@ -61,7 +61,10 @@
 				<div class="row">
 					<div class="span5">					
 						<h4 class="title"><span class="text"><strong>Login</strong> Form</span></h4>
-						<form action="${pageContext.request.contextPath}/login" method="post">
+						<c:if test="${not empty error}">
+                      <h2 style="color:red;">${error}</h2>
+                  </c:if>
+						<form action="${pageContext.request.contextPath}/" method="post">
 							<input type="hidden" name="next" value="/">
 							<fieldset>
 								<div class="control-group">
@@ -77,7 +80,9 @@
 									</div>
 								</div>
 								<div class="control-group">
-									<input tabindex="3" class="btn btn-inverse large" type="submit" value="Sign into your account">
+									<input tabindex="3" class="btn btn-inverse large" type="submit" value="Sign into your account"> <span>or</span>
+									 <button class="btn btn-inverse" type="submit" name="submit" value="Submit" id="submit" formaction="${pageContext.request.contextPath}/register">Register</button>
+									 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 									<hr>
 									<p class="reset">Recover your <a tabindex="4" href="#" title="Recover your username or password">username or password</a></p>
 								</div>
@@ -88,7 +93,6 @@
 					<!-- REGISTER FORM  -->
 			
 					
- <button class="btn btn-inverse" type="submit" name="submit" value="Submit" id="submit" formaction="${pageContext.request.contextPath}/register">Register</button>
 					
 					
 					<!-- WHITESPACE  -->

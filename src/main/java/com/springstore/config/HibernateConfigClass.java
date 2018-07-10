@@ -65,7 +65,7 @@ public class HibernateConfigClass {
 		prop.put("hibernate.show_sql", "true");
 		prop.put("hibernate.format_sql", "true");
 		
-		prop.put("hibernate.hbm2ddl.auto", "update");
+		prop.put("hibernate.hbm2ddl.auto", "create");
 		
 		return prop;
 	}

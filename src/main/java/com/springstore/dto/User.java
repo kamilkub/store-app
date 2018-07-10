@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "users")
@@ -19,26 +21,36 @@ public class User {
 	  @Column(name="id")
 	  private int id;
 	  
+	  @NotNull(message="Required!")
+	  @Size(min=1, message="Required!")
 	  @Column(name="first_name")
 	  private String firstName;
 	  
+	  @NotNull(message="Required!")
+	  @Size(min=1, message="Required!")
 	  @Column(name="last_name")
 	  private String lastName;
 	  
 	  @Column(name="enabled")
 	  private boolean active = true;
 	  
+	  @NotNull(message="Required!")
+	  @Size(min=1, message="Required!")
 	  @Column(name="email")
 	  private String email;
 	  
+	  @NotNull(message="Required!")
+	  @Size(min=1, message="Required!")
 	  @Column(name="password")
 	  private String password;
 	  
+	  @NotNull(message="Required!")
+	  @Size(min=1, max=15, message="Required!")
 	  @Column(name="contact_number")
 	  private String contact_number;
 	  
 	  @Column(name="role")
-	  private String role;
+	  private String role = "USER";
 	  
 	  
 	  @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
