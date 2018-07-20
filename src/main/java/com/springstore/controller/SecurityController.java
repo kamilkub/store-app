@@ -38,12 +38,17 @@ public class SecurityController {
 	private static final org.jboss.logging.Logger logger = LoggerFactory.logger(SecurityController.class);
 
 	@RequestMapping("/auth")
-	public ModelAndView signInForm(@RequestParam(name = "error", required = false) String error) {
+	public ModelAndView signInForm(@RequestParam(name = "error", required = false) String error,
+			@RequestParam(name = "logout", required = false) String logout) {
 
 		ModelAndView model_view = new ModelAndView("signin");
 
 		if (error != null) {
 			model_view.addObject("error", "Invalid email or password!");
+		}
+		
+		if(logout != null) {
+			model_view.addObject("logout", "You successfully logged out!");
 		}
 
 		return model_view;

@@ -36,11 +36,7 @@
 				<div class="span8">
 					<div class="account pull-right">
 						<ul class="user-menu">				
-							<li><a href="${pageContext.request.contextPath}/show/all/products">View Products</a></li>
-							<li><a href="${pageContext.request.contextPath}/cart">Your Cart</a></li>
-							<li><a href="${pageContext.request.contextPath}/management/products">Add product</a></li>
-							<li><a href="${pageContext.request.contextPath}/register">Sign up</a></li>						
-							<li><a href="${pageContext.request.contextPath}/auth">Login</a></li>			
+					<%@ include file="./share/topbar.jsp" %>		
 						</ul>
 					</div>
 				</div>
@@ -57,7 +53,10 @@
 			</section>	
 			<section class="header_text sub">
 			<img class="pageBanner" src="<c:url value="/resources/themes/images/pageBanner.png" />" alt="New products" >
-				<h4><span>New products</span></h4>
+			<br>
+			<br>
+			<br>
+				<h4><span>All products</span></h4>
 			</section>
 			<section class="main-content">
 			

@@ -2,7 +2,13 @@ package com.springstore.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.springstore.dao.CategoryDAO;
 import com.springstore.dao.ProductDAO;
+import com.springstore.dao.UserDAO;
 import com.springstore.dto.Category;
 import com.springstore.dto.Product;
 import com.springstore.dto.User;
@@ -29,13 +36,18 @@ public class StoreController {
 
 	@Autowired
 	private ProductDAO productDAO;
+	
+	@Autowired
+	private UserDAO userDAO;
+	
 
 	@RequestMapping(value = { "/home", "/", "/index" })
 	public ModelAndView showPage() {
 
 		ModelAndView model_view = new ModelAndView("index");
-
+	
 		model_view.addObject("categories", categoryDAO.categoriesList());
+
 
 		return model_view;
 	}
@@ -119,6 +131,20 @@ public class StoreController {
 		model_view.addObject("page_title", "Access unauthorized");
 
 		return model_view;
+		
+	}
+	
+	@RequestMapping(value = "/log-out")
+	public String logoutAction(HttpServletRequest req, HttpServletResponse resp) {
+	    
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		
+		if(auth != null) {
+			
+			new SecurityContextLogoutHandler().logout(req, resp, auth);;
+		}
+		
+		return "redirect:/login?logout";
 		
 	}
 	

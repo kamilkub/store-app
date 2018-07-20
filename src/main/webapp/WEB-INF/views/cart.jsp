@@ -34,11 +34,7 @@
 				<div class="span8">
 					<div class="account pull-right">
 						<ul class="user-menu">				
-							<li><a href="${pageContext.request.contextPath}/show/all/products">View Products</a></li>
-							<li><a href="${pageContext.request.contextPath}/cart">Your Cart</a></li>
-							<li><a href="${pageContext.request.contextPath}/management/products">Add product</a></li>
-							<li><a href="${pageContext.request.contextPath}/register">Sign up</a></li>					
-							<li><a href="${pageContext.request.contextPath}/auth">Login</a></li>				
+					<%@ include file="./share/topbar.jsp" %>		
 						</ul>
 					</div>
 				</div>
@@ -216,7 +212,7 @@
 					</div>
 					<div class="span5">
 						<p class="logo"><img src="<c:url value="/resources/themes/images/logo.png" />" class="site_logo" alt=""></p>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. the  Lorem Ipsum has been the industry's standard dummy text ever since the you.</p>
+						<p></p>
 						<br/>
 						<span class="social_icons">
 							<a class="facebook" href="#">Facebook</a>
@@ -228,7 +224,7 @@
 				</div>	
 			</section>
 			<section id="copyright">
-				<span>Copyright 2013 bootstrappage template  All right reserved.</span>
+				<span>@Copyright 2018.</span>
 			</section>
 		</div>
 		<script src="<c:url value="/resources/themes/js/common.js" />"></script>

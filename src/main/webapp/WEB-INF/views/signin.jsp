@@ -21,6 +21,9 @@
                   <br>
                   <input type="password" name="password" id="password" />
                   <br>
+                   <c:if test="${not empty logout}">
+                        <span style="color:green;">${logout}</span>
+                  </c:if>
                   <c:if test="${not empty error}">
                       <h2 style="color:red;">${error}</h2>
                   </c:if>

@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 	<head>
 		<meta charset="utf-8">
@@ -34,11 +35,8 @@
 				<div class="span8">
 					<div class="account pull-right">
 						<ul class="user-menu">				
-							<li><a href="${pageContext.request.contextPath}/show/all/products">View Products</a></li>
-							<li><a href="${pageContext.request.contextPath}/cart">Your Cart</a></li>
-							<li><a href="${pageContext.request.contextPath}/management/products">Add product</a></li>
-							<li><a href="${pageContext.request.contextPath}/register">Sign up</a></li>				
-							<li><a href="${pageContext.request.contextPath}/auth">Login</a></li>	
+							
+							<%@ include file="./share/topbar.jsp" %>
 									
 						</ul>
 					</div>
@@ -48,7 +46,7 @@
 		<div id="wrapper" class="container">
 			<section class="navbar main-menu">
 				<div class="navbar-inner main-menu">				
-					<a href="${pageContext.request.contextPath}/" class="logo pull-left"><img src="<c:url value="/resources/themes/images/logo.png" />" class="site_logo" alt=""></a>
+					<a href="${pageContext.request.contextPath}/home" class="logo pull-left"><img src="<c:url value="/resources/themes/images/logo.png" />" class="site_logo" alt=""></a>
 					
 					<%@include file="./share/nav.jsp" %>
 					
@@ -351,7 +349,7 @@
 				</div>	
 			</section>
 			<section id="copyright">
-				<span>@ Copyright 2018 Template Kubel</span>
+				<span>@ Copyright 2018 Template </span>
 			</section>
 		</div>
 		<script src="<c:url value="/resources/themes/js/common.js" />"></script>

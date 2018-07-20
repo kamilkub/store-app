@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.springstore.dao.UserDAO;
 import com.springstore.dto.Address;
 import com.springstore.dto.Cart;
+import com.springstore.dto.Category;
 import com.springstore.dto.User;
 
 @Repository("userDAO")
@@ -114,7 +115,7 @@ public class UserImpl implements UserDAO {
 
 	@Override
 	public List<Address> list_of_shippingAddresses(User user) {
-String query_ex = "FROM Address WHERE user = :user AND shipping = :shipping";
+         String query_ex = "FROM Address WHERE user = :user AND shipping = :shipping";
 		
 		try {
 			
@@ -128,5 +129,14 @@ String query_ex = "FROM Address WHERE user = :user AND shipping = :shipping";
 			return null;
 		}
 	}
+
+
+	@Override
+	public User getUser(int id) {
+		
+		return session_factory.getCurrentSession().get(User.class, Integer.valueOf(id));
+	}
+	
+	
 
 }

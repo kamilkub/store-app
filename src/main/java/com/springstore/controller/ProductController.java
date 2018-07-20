@@ -23,8 +23,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.springstore.dao.CategoryDAO;
 import com.springstore.dao.ProductDAO;
+import com.springstore.dao.UserDAO;
 import com.springstore.dto.Category;
 import com.springstore.dto.Product;
+import com.springstore.dto.User;
 import com.springstore.filetransport.FileTransportClass;
 import com.springstore.filevalidation.FileValidator;
 
@@ -51,7 +53,7 @@ public class ProductController {
 		List<Product> products = productDAO.activeProducts();		
 		product.setSupplierId(1);
         product.setActive(true);
-        
+  
         model_view.addObject("product", product);
         model_view.addObject("products", products);
         

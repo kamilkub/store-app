@@ -34,11 +34,7 @@
 				<div class="span8">
 					<div class="account pull-right">
 						<ul class="user-menu">				
-							<li><a href="${pageContext.request.contextPath}/show/all/products">View Products</a></li>
-							<li><a href="${pageContext.request.contextPath}/cart">Your Cart</a></li>
-							<li><a href="${pageContext.request.contextPath}/registration">Check Out</a></li>
-							<li><a href="${pageContext.request.contextPath}/management/products">Add product</a></li>					
-							<li><a href="${pageContext.request.contextPath}/auth">Login</a></li>		
+							<%@ include file="./share/topbar.jsp" %>		
 						</ul>
 					</div>
 				</div>
