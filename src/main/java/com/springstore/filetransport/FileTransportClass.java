@@ -11,7 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class FileTransportClass {
    
 	private static final org.jboss.logging.Logger logger_console = LoggerFactory.logger(FileTransportClass.class);
-	private static final String direct_path = "C:\\Users\\Kamil\\eclipse-javaee-workspace\\spring-store-app\\src\\main\\webapp\\WEB-INF\\resources\\themes\\images\\";
+	private static final String direct_path = "";
 	private static String server_path = "";
 	
 	
