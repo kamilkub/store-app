@@ -1,8 +1,6 @@
 # store-app
-## Java Spring Framework Store Project
-## REST
-## MVC
-## H2 Database 
-## Spring Security
-       ###     It is still in work      ###
-       ####################################
+# Java Spring Framework Store Project
+- REST
+- MVC
+- H2 Database 
+- Spring Security
